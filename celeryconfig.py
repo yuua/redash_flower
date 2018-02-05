@@ -1,8 +1,6 @@
-BROKER_URL = 'redis://redis:6379/0'
-CELERY_RESULT_BACKEND = 'redis'
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_RESULT_BACKEND = 'redis'
-CELERYD_LOG_LEVEL = 'INFO'
-CELERY_IMPORTS = ('redash.tasks', )
+broker_url = 'redis://redis:6379/0'
+result_backend = 'redis'
+accept_content = ['json']
+task_serializer = 'json'
+result_serializer = 'json'
+imports = ('redash.tasks', )
