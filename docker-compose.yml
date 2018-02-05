@@ -1,0 +1,15 @@
+version: '2'
+services:
+  flower:
+    build: .
+#     image: 
+    ports:
+      - "5555:5555"
+    environment:
+      PYTHONUNBUFFERED: 0
+      REDASH_LOG_LEVEL: "INFO"
+      REDASH_REDIS_URL: "redis://redis:6379/0"
+      REDASH_DATABASE_URL: "postgresql://postgres@postgres/postgres"
+    external_links:
+      - "redash_redis_1:redis"
+    network_mode: "redash_default"
